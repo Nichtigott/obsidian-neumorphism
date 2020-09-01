@@ -279,6 +279,13 @@ svg.link {
 }
 
 /*=================link 的写法=========================*/
+.markdown-preview-view code{
+	background-color:var(--color-text-dark);
+}
+
+.external-link{
+	color:var(--color-text-darkest);
+}
 
 
 .CodeMirror-vscrollbar {
