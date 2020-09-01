@@ -24,12 +24,13 @@ body{
 /* ======= DARK ==============*/
 .theme-light,
 .theme-dark {
-    --color:0, 0%;/*两个值一样*/
-    --l:74%; /*最小值50*/
+    --color:20, 60%;/*两个值一样*/
+    --l:60%; /*最小值50*/
     --color-primary-lightest: hsl(var(--color),var(--l));
     --color-primary-light: hsl(var(--color),calc(var(--l) - 7.5%));
     --color-primary: hsl(var(--color),calc(var(--l) - 10%));
     --color-primary-dark: hsl(var(--color),calc(var(--l) - 15%));
+    --color-primary-middark: hsl(var(--color),calc(var(--l) - 20%));
     --color-primary-darkest: hsl(var(--color),calc(var(--l) - 25%));
     --color-text-dark:hsl(var(--color),calc(var(--l) - 40%));
     --color-text-darkest:hsl(var(--color),calc(var(--l) - 50%));     
@@ -151,6 +152,7 @@ body{
 }
 
 .tag:hover {
+    background-color: var(--color-primary-darkest);
     color: #d1c0ff;
 }
 
@@ -171,6 +173,7 @@ body{
 }
 .tag:active
 {
+	background-color: var(--color-primary-dark);
     box-shadow:inset 0px 0px 0px var(--color-primary),
     inset 0px 0px 0px var(--color-primary-darkest);
 }
@@ -208,24 +211,33 @@ ul ul::before {
 
 .markdown-embed-title {
     font-family: sans-serif;
-    font-size: 10px;
-    color: var(--text-accent);
+    font-size: 25px;
+    color: var(--color-text-darkest);
     /*rgb(150,200,255);
 */
-    line-height: 10px;
+    line-height: 35px;
     width: 100%;
-    text-align: left;
+    text-align: center;
     font-weight: 100;
-    margin: -4px 0px;
+    margin: 0px 0px;
     box-shadow:-5px -3px 8px var(--color-primary),
     6px 2px 12px var(--color-primary-darkest);
+}
+.markdown-embed-title:hover{
+  background-color: var(--color-primary-darkest);
+  color: #c3ffae;
+}
+.markdown-embed-title:active{
+
+    box-shadow:0px 0px 0px var(--color-primary),
+    0px 0px 0px var(--color-primary-darkest);
 }
 
 .markdown-preview-view .markdown-embed {
     background-color: var(--color-primary-dark);
     border-radius: 0px;
     border: 0;
-    border-left: 1px solid var(--text-selection);
+    border-left: 1px solid var(--color-text-darkest);
     margin: 0px -20px;
 }
 
@@ -238,7 +250,7 @@ ul ul::before {
     display: inline;
     max-height: 100%;
     max-width: 100%;
-    margin: -25px 0px -15px 0px;
+    margin: 0px 0px -15px 0px;
     padding: 0px 0px 5px 0px;
 }
 
@@ -246,17 +258,21 @@ ul ul::before {
     display: block;
     max-height: 100%;
     max-width: 100%;
-    margin: 10px 0px 5px 0px;
+    margin: 20px 0px 20px 0px;
 }
 
 .markdown-embed-link {
     top: -3px;
     left: -20px;
-    color: var(--accent-strong);
+    width: 5px;
+    color: var(--color-text-darkest);
     cursor: pointer;
     position: absolute;
 }
-
+.markdown-preview-view .markdown-embed-content p:first-child {
+	margin-top: 50px;
+}
+}
 svg.link {
     width: 12px;
     height: 12px;
@@ -278,7 +294,40 @@ svg.link {
     left: 0px;
 }
 
-/*=================link 的写法=========================*/
+/*============================================link 的写法===========================================*/
+.vertical-tab-nav-item {
+    border-left: 3px solid transparent;
+    user-select: none;
+    cursor: pointer;
+    width: 182px;
+}
+.modal.mod-settings .vertical-tab-content-container {
+    padding: 35px 0px 20px 0;
+    height: 70vh;
+    color: transparent;
+    background-color: #ffffff00;
+}
+
+.workspace-tab-container-before.is-before-active .workspace-tab-header-inner, .workspace-tab-header.is-before-active .workspace-tab-header-inner {
+    height: 100%;
+    display: flex;
+    border-radius: 5px;
+}
+
+
+.cm-s-obsidian span.cm-inline-code {
+    color: #c7254e;
+    font-size: 90%;
+    background-color: var(--color-text-dark);
+    vertical-align: baseline;
+}
+.cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight) {
+  background-color: var(--color-text-dark);
+  vertical-align: baseline;
+  border-radius: 0px;
+
+}
+
 .markdown-preview-view code{
 	background-color:var(--color-text-dark);
 }
@@ -316,6 +365,7 @@ svg.link {
   text-decoration-color: #00000000;
   cursor: pointer;
   color:var(--color-text-dark);
+  border-radius: 3px;
   box-shadow:-5px -3px 5px var(--color-primary),
     6px 2px 9px var(--color-primary-darkest);
     margin-left:10px;
@@ -323,12 +373,14 @@ svg.link {
 }
 .markdown-preview-view .internal-link:hover
 {
+  background-color: var(--color-primary-darkest);
   color: var(--color-primary-lightest);
 }
 
 .markdown-preview-view .internal-link:active
 {
-  box-shadow:0px 0px 0px var(--color-primary),
+	background-color: var(--color-primary-dark);
+    box-shadow:0px 0px 0px var(--color-primary),
     0px 0px 0px var(--color-primary-darkest);
 }
 
@@ -340,6 +392,7 @@ svg.link {
 
 .search-input{
     display: block;
+    border-radius: 5px;
     margin: 0 auto 8px auto;
     width: calc(100% - 28px);
     box-shadow:-5px -3px 6px var(--color-primary),
@@ -368,6 +421,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 
 
 .nav-action-button {
+	border-radius: 5px;
     color: var(--text-muted);
     cursor: pointer;
     box-shadow:-5px -3px 6px var(--color-primary),
@@ -375,24 +429,34 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 }
 .nav-action-button:hover{
   color: var(--color-primary-lightest);
+  background-color: var(--color-primary-darkest);
 }
 
 .nav-action-button:active{
-  box-shadow:0px 0px 0px var(--color-primary),
+	background-color: var(--color-primary-dark);
+    box-shadow:0px 0px 0px var(--color-primary),
     0px 0px 0px var(--color-primary-darkest);
 }
 
+.workspace-leaf-content[data-type='search'] .nav-action-button.is-active, .workspace-leaf-content[data-type='backlink'] .nav-action-button.is-active {
+    background-color: var(--color-primary-darkest);
+    color: var(--text-on-accent);
+}
+
 .side-dock-ribbon-action {
+	border-radius: 5px;
     box-shadow:-5px -3px 6px var(--color-primary),
     6px 2px 8px var(--color-primary-darkest);
 }
 
 .side-dock-ribbon-action:hover{
   color: var(--color-primary-lightest);
+  background-color: var(--color-primary-darkest);
 }
 
 .side-dock-ribbon-action:active{
-  box-shadow:0px 0px 0px var(--color-primary),
+	background-color: var(--color-primary-dark);
+    box-shadow:0px 0px 0px var(--color-primary),
     0px 0px 0px var(--color-primary-darkest);
 }
 
@@ -403,6 +467,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     color: var(--text-muted);
     position: relative;
     top: 3px;
+    border-radius: 2px;
     box-shadow:-5px -3px 6px var(--color-primary),
     6px 2px 8px var(--color-primary-darkest);
 
@@ -410,26 +475,31 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 
 .view-action:hover{
   color: var(--color-primary-lightest);
+  background-color: var(--color-primary-darkest);
 }
 
 .view-action:active{
-  box-shadow:0px 0px 0px var(--color-primary),
+	background-color: var(--color-primary-dark);
+    box-shadow:0px 0px 0px var(--color-primary),
     0px 0px 0px var(--color-primary-darkest);
 }
 
 .workspace-tab-header-inner {
     height: 100%;
     display: flex;
+    border-radius: 5px;
     box-shadow:-5px -3px 6px var(--color-primary),
     6px 2px 8px var(--color-primary-darkest);
 }
 .workspace-tab-header-inner:hover{
   color: var(--color-primary-lightest);
+  background-color: var(--color-primary-darkest);
 }
 
 .workspace-tab-header-inner:active
 {
-  box-shadow:0px 0px 0px var(--color-primary),
+	background-color: var(--color-primary-dark);
+    box-shadow:0px 0px 0px var(--color-primary),
     0px 0px 0px var(--color-primary-darkest);
 }
 .workspace-ribbon-collapse-btn {
@@ -445,10 +515,12 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 }
 .workspace-ribbon-collapse-btn:hover{
   color: var(--color-primary-lightest);
+  background-color: var(--color-primary-darkest);
 }
 
 .workspace-ribbon-collapse-btn:active{
-  box-shadow:0px 0px 0px var(--color-primary),
+	background-color: var(--color-primary-dark);
+    box-shadow:0px 0px 0px var(--color-primary),
     0px 0px 0px var(--color-primary-darkest);
 }
 .side-dock-ribbon-action {
@@ -627,6 +699,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     padding-left: 7px;
     /* reduce to 0 for more space */
     padding-bottom: 10px;
+    padding-right: 20px;
     margin-bottom: 10px;
 }
 
@@ -647,7 +720,9 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 
 .nav-file-title,
 .nav-folder-title {
+    background-color: var(--color-primary-dark);
     font-size: 12px;
+    width: 180px;
     line-height: 14px;
     cursor: pointer;
     position: relative;
@@ -656,11 +731,21 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     border-style: solid;
     border-color: transparent;
     border-image: initial;
-    border-radius: 0px;
+    border-radius: 5px;
     padding: 1px 14px 0px 20px;
+    margin: 10px;
+    box-shadow:-5px -3px 6px var(--color-primary),
+    6px 2px 8px var(--color-primary-darkest);
 }
 
+ 
 
+.nav-file.is-active > .nav-file-title, .nav-file.is-active > .nav-folder-title, .nav-file.is-active > .nav-folder-collapse-indicator, .nav-folder.is-active > .nav-file-title, .nav-folder.is-active > .nav-folder-title, .nav-folder.is-active > .nav-folder-collapse-indicator {
+    color: #c3ffae;
+    box-shadow:0px 0px 0px var(--color-primary),
+    0px 0px 0px var(--color-primary-darkest);
+}
+ 
 /*---- nav arrows adjust location ----*/
 
 .nav-folder-collapse-indicator {
@@ -710,7 +795,16 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     6px 2px 6px var(--color-primary-darkest);
 }
 
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--color-primary-darkest);
+    -webkit-border-radius: 5px;
+    box-shadow:  -5px -3px 4px var(--color-primary),
+    6px 2px 6px var(--color-primary-darkest);
+
+}
+
 ::-webkit-scrollbar-thumb:active {
+	background-color: var(--color-primary-darkest);
     -webkit-border-radius: 5px;
     box-shadow:  -5px -3px 4px var(--color-primary),
     6px 2px 6px var(--color-primary-darkest);
@@ -858,7 +952,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 .search-result-file-match:not(:first-child) {
     margin-top: 0px;
 }
-
+/*============反link的格式==========*/
 .search-result-file-matched-text {
     color: var(--color-text-darkest)/*var(--text-matched)*/;
     background-color: var(--background-secondary-alt);
@@ -873,13 +967,16 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 }
 .search-result-file-matched-text:hover {
     color: var(--text-matched) ;
+    background-color: var(--color-primary-darkest);
 }
 
 .search-result-file-matched-text:active {
+    background-color: var(--background-secondary-alt);
     box-shadow:0px 0px 0px var(--color-primary),
     0px 0px 0px var(--color-primary-darkest);
 
 }
+/*=======================================================================*/
 
 .search-info-more-matches {
     color: var(--text-faint);
@@ -902,15 +999,8 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     border-radius: 0px;
 }
 
-.workspace-tab-container-before.is-before-active .workspace-tab-header-inner,
-.workspace-tab-header.is-before-active .workspace-tab-header-inner {
-    border-radius: 0px;
-}
 
-.workspace-tab-container-after.is-after-active .workspace-tab-header-inner,
-.workspace-tab-header.is-after-active .workspace-tab-header-inner {
-    border-bottom-left-radius: 0px;
-}
+
 
 .workspace-split.mod-left-split .workspace-tabs .workspace-leaf {
     border-top-left-radius: 0px;
