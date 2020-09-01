@@ -50,7 +50,7 @@ body{
     --text-matched: #7dff8f;
     --text-on-accent: #dcddde;
     --text-selection: rgba(6, 66, 113, 0.99);
-    --text-highlight-bg: rgba(26, 73, 100, 0.66);
+    --text-highlight-bg: var(--color-primary-lightest);
     --interactive-normal: #2a2a2a;
     --interactive-hover: #303030;
     --interactive-accent: rgb(0, 0, 0);/*浅蓝色*/
@@ -917,9 +917,9 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 /*======= flat status bar ====*/
 
 .status-bar {
-    background-color: var(--background-secondary-alt);
+    background-color: var(--color-primary-darkest);
     border-top: 0px solid var(--background-modifier-border);
-    color: var(--color-text-dark);
+    color: var(--color-text-darkest);
 }
 
 
