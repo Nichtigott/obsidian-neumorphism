@@ -25,13 +25,13 @@ body{
 .theme-light,
 .theme-dark {
     --color:20, 60%;/*两个值一样*/
-    --l:60%; /*最小值50*/
+    --l:55%; /*最小值50*/
     --color-primary-lightest: hsl(var(--color),var(--l));
     --color-primary-light: hsl(var(--color),calc(var(--l) - 7.5%));
-    --color-primary: hsl(var(--color),calc(var(--l) - 10%));
+    --color-primary: hsl(var(--color),calc(var(--l) - 8%));
     --color-primary-dark: hsl(var(--color),calc(var(--l) - 15%));
     --color-primary-middark: hsl(var(--color),calc(var(--l) - 20%));
-    --color-primary-darkest: hsl(var(--color),calc(var(--l) - 25%));
+    --color-primary-darkest: hsl(var(--color),calc(var(--l) - 29%));
     --color-text-dark:hsl(var(--color),calc(var(--l) - 40%));
     --color-text-darkest:hsl(var(--color),calc(var(--l) - 50%));     
 
@@ -507,6 +507,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     cursor: pointer;
     color: var(--text-muted);
     position: relative;
+    padding-bottom: 5px;
     top: 3px;
     border-radius: 2px;
     box-shadow:-5px -3px 6px var(--color-primary),
@@ -605,8 +606,8 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 }
 
 .view-actions {
-    padding: 6px 10px;
-    display: flex;
+	padding-top: 6px;
+    padding-bottom: 5px;
     justify-content: flex-end;
     margin-bottom: 0px;
 }
@@ -1033,11 +1034,11 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 /*========= remove rounded corners =======*/
 
 .workspace-tab-header.is-active {
-    border-radius: 0px;
+    border-radius: 5px;
 }
 
 .nav-folder-title {
-    border-radius: 0px;
+    border-radius: 5px;
 }
 
 
@@ -1155,11 +1156,6 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 
 /* Wrap long nav text and some paddings */
 
-.nav-file-title,
-.nav-folder-title {
-    white-space: normal;
-    width: auto;
-}
 
 
 /* Indent wrapped nav text */
