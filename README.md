@@ -4,9 +4,9 @@
 新增了侧边栏的按钮
 <br>
 ![](https://github.com/chfilyz/obsidian-neumorphism/blob/master/%E6%89%B9%E6%B3%A8%202020-09-03%20214951.png)
-
 <br>
 ## 9月2日更新
+<br>
 由_ph社区主题结构改过来的，但是基本是全部都改了，用这个是为了少写一点代码，嘿嘿嘿：
 The theme structure of the _ph community has been changed, but basically all have been changed. This is to write a little less code, ha ha ha
 <br>
